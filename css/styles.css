@@ -1,0 +1,266 @@
+/* styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #2c3e50; /* Texto oscuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.dark-mode {
+    background-color: #121212; /* Fondo oscuro */
+    color: #ecf0f1; /* Texto claro */
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px; /* Ajustar el tamaño del botón según la imagen */
+    height: 50px; /* Ajustar el tamaño del botón según la imagen */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainTitle {
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+.intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.introTitle {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0;
+    font-size: 2em;
+}
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 5em 0em 1em 0em;
+    background-color: #bdc3c7; /* Fondo gris suave */
+    color: #2c3e50; /* Texto oscuro */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode header, .dark-mode footer {
+    background-color: #1c1c1c; /* Fondo gris oscuro */
+    color: #ecf0f1; /* Texto claro */
+}
+
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.project {
+    flex: 1 1 calc(50% - 1em); /* Dos columnas en pantallas grandes */
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 20px;
+    background-color: #e5e8e8; /* Fondo gris muy claro */
+    border: 1px solid #b0bec5; /* Borde gris mediano */
+    border-radius: 8px; /* Esquinas redondeadas */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.dark-mode .project {
+    background-color: #2a2a2a; /* Fondo gris muy oscuro */
+    border: 1px solid #1a1a1a; /* Borde gris muy oscuro */
+}
+
+.dark-mode .project:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+
+.project img, .project video {
+    width: 100%;
+    height: 400px; /* Tamaño fijo para evitar cambios de tamaño */
+    object-fit: contain; /* Ajustar imagen/video al contenedor sin cortar */
+}
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    min-height: 400px; /* Altura mínima para evitar redimensionamiento brusco */
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider .slide img, .slider .slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta el contenido para cubrir el contenedor */
+}
+
+.slide:first-child {
+    display: block;
+}
+
+.slider-dots {
+    text-align: center;
+    margin: 1px 0; /* Ajustar la distancia entre imagen/video y bolitas */
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #cccccc; /* Color plateado claro */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #888888; /* Color plateado oscuro al interactuar */
+}
+
+.description {
+    text-align: left;
+    padding: 5px 0; /* Ajustar la distancia entre bolitas y descripción */
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.description h2 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0; /* Eliminar márgenes del título */
+}
+
+.description h3 {
+    font-size: 0.875em;
+    font-weight: bold;
+    color: #2c3e50bd; /* Texto oscuro */
+
+    margin: 0; /* Eliminar márgenes del título */
+}
+
+.dark-mode h3 {
+    color: #ecf0f1; /* Texto claro */
+}
+
+.description p {
+    font-size: 0.875em;
+}
+
+footer {
+    padding: 0em 0em 2em;
+    color: #2c3e50; /* Texto oscuro */
+    border-top: 1px solid #b0bec5; /* Separador sutil */
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.dark-mode footer {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ecf0f1; /* Texto claro */
+}
+
+@media (max-width: 600px) {
+    .project {
+        flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+    }
+}
+
+.github {
+    text-align: center;
+    padding: 3em 1em;
+}
+
+.github h2 {
+    font-size: 1.5em;
+    color: #2c3e50; /* Texto oscuro */
+    margin-bottom: 0.5em;
+}
+
+.dark-mode .github h2 {
+    color: #ecf0f1; /* Texto claro */
+}
+
+.github p {
+    font-size: 1em;
+    color: #2c3e50; /* Texto oscuro */
+    margin-bottom: 1em;
+}
+
+.dark-mode .github p {
+    color: #ecf0f1; /* Texto claro */
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    color: #2c3e50; /* Texto oscuro */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.github-link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Espacio entre ícono y texto */
+    transition: transform 0.3s ease;
+}
+
+.github-link:hover {
+    color: #888888; /* Texto más oscuro */
+}
+
+.github-link:hover img {
+    transform: scale(1.2); /* Animación al pasar el cursor */
+}
+
+.dark-mode .github-link {
+    color: #ecf0f1; /* Texto claro */
+}
+
+.dark-mode .github-link:hover {
+    color: #cccccc; /* Texto más claro */
+}
