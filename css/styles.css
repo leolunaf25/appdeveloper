@@ -127,13 +127,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Esquinas redondeadas */
+
+    border-radius: 10px;
+
 
 }
 
 .round_corner {
     width: 100%; /* Conserva el ancho del contenedor padre */
-    border-radius: 15px; /* Esquinas redondeadas */
     display: flex; /* Flexbox para manejar los hijos */
     flex-direction: row; /* Coloca los elementos hijos en fila */
     align-items: center; /* Centra verticalmente los hijos */
@@ -165,6 +166,7 @@ body {
     display: flex;
     justify-content: center; /* Centrado horizontal */
     align-items: center; /* Centrado vertical */
+
   }
   
   .scroll_wrapper {
@@ -586,7 +588,6 @@ footer p {
     height: auto;
     max-width: 600px;
     object-fit: contain;
-    border-radius: 10px;
 }
 
 .title_main {
@@ -602,14 +603,14 @@ footer p {
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
-    gap: 10px;
-    padding: 10px;
+    gap: 0px;
+    padding: 0px;
+    background-color: rebeccapurple;
 }
 
 .media_scroller img {
     height: 150px;
     object-fit: cover;
-    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
