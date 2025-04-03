@@ -1,112 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Android Dev</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <img src="images/moon.png" class="dark-mode-toggle" onclick="toggleDarkMode()" alt="Modo Oscuro">
-    <header>
-        <div class="intro">
-            <h1>¡Hola! Soy Leo.</h1>
-            <p>Desarrollador de aplicaciones móviles y sitios web.<br>
-                Transformo ideas en experiencias digitales funcionales y atractivas.
-            </p>
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <img src="images/logo_main.svg" alt="Logo" class="logo">
+            <img src="images/moon.png" class="btnMode" onclick="toggleDarkMode()" alt="Modo Oscuro" >
         </div>
     </header>
-    <section class="lol">
-        <div class="introTitle">
-            <h1 class="mainTitle">Proyectos</h1>
+    <main class="content">
+
+        <div class="header_content">
+
         </div>
-    </section>
-    <div class="container">
-        <main>
-            <section class="portfolio">
-                <div class="project">
-                    <div class="noSlider">
-                        <div class="noSlide">
+
+        <div class="presentation_container">
+            <div class="header_main">
+                <div class="title_main_head">
+                    <h1>¡Hola Soy Leonardo Luna! <br>
+                    Desarrollador de aplicaciones móviles</h1>
+                    <p>Me gusta crear aplicaciones interesantes, disfruto el proceso creativo y técnico.</p>
+                </div>                
+            </div> 
+            <div class="header_image_main">
+                <img src="images/mainDef.png" alt="main_image">
+            </div> 
+        </div>
+
+        <div class="wrapper">
+            <div class="scroller">
+                <div class="items">
+                    <div class="item"><img src="images/blender.svg" alt="Blender"></div>
+                    <div class="item"><img src="images/ICON-GRADLE_RGB.svg" alt="Gradle"></div>
+                    <div class="item"><img src="images/android.svg" alt="Android"></div>
+                    <div class="item"><img src="images/kotlin.svg" alt="Kotlin"></div>
+                    <div class="item"><img src="images/compose.svg" alt="Compose"></div>
+                    <div class="item"><img src="images/java.svg" alt="Java"></div>
+                    <div class="item"><img src="images/csharp.svg" alt="C#"></div>
+                    <div class="item"><img src="images/Unity_light.svg" class="unity_logo" alt="Unity"></div>
+                </div>
+            </div>
+        </div>
+        
+    
+        <div class="presentation_container">
+            <div class="round_corner">
+              <div class="header_main">
+                <div class="title_main">
+                    <h2>Sistema de autenticación en Android utilizando Firebase Authentication.<br><br>
+                        <p class="p_login">Desarrollé un sistema de autenticación en Android que permite registrarse y acceder con <strong>correo y contraseña</strong>, además de iniciar sesión con <strong>Google</strong>. Usé <strong>Kotlin</strong> como lenguaje principal e integré <strong>Firebase Authentication</strong> para gestionar el acceso de manera segura. 
+                            <br>También implementé <strong>Google Sign-In</strong> para facilitar un inicio de sesión rápido. Siguiendo el patrón <strong>MVVM</strong>, estructuré el proyecto de forma organizada y escalable. Para la interfaz, utilicé <strong>Material Design</strong>, asegurando una experiencia intuitiva y moderna.</p>
+                    </h2>
+                </div>
+              </div>
+              <div class="header_image_one">
+                <div class="scroll_wrapper">
+                  <div class="media_scrollerG">
+                    <img src="images/login_image/login1.png" alt="Imagen login">
+                    <img src="images/login_image/login2.png" alt="Imagen login">
+                    <img src="images/login_image/login3.png" alt="Imagen login">
+                    <img src="images/login_image/login4.png" alt="Imagen login">
+                    <img src="images/login_image/login5.png" alt="Imagen login">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+        <div class="presentation_container">
+            <div class="round_corner">
+                <div class="header_image_one">
+                    <div class="scroll_wrapper"> <!-- Nueva caja contenedora -->
+                        <div class="media_scrollerG">
+                            <img src="images/login_image/shop1.png" alt="Imagen login">
+                            <img src="images/login_image/shop2.png" alt="Imagen login">
+                            <img src="images/login_image/shop3.png" alt="Imagen login">
+                            <img src="images/login_image/shop4.png" alt="Imagen login">
+                            <img src="images/login_image/shop5.png" alt="Imagen login">
+                        </div>
+                    </div>
+                </div>
+                <div class="header_main">
+                    <div class="title_main">
+                        <h2> Shop Explorer, del popular juego en línea.<br><br>
+                            <p class="p_login">Desarrollé una aplicación que consume datos de una <strong>API pública</strong> para mostrar la <strong>tienda del día</strong>, los <strong>aspectos visuales disponibles</strong>, los <strong>detalles de cada diseño</strong> y el <strong>mapa actual</strong> con ubicaciones clave. 
+                                <br>Para la comunicación con la API, utilicé <strong>Retrofit</strong>, asegurando un consumo de datos eficiente. Implementé <strong>Picasso</strong> para la carga y gestión optimizada de imágenes, y empleé <strong>corrutinas</strong> para manejar procesos asíncronos, garantizando una experiencia fluida. 
+                                <br>Además, estructuré el proyecto siguiendo <strong>MVVM</strong> y <strong>Clean Architecture</strong>, facilitando la escalabilidad y el mantenimiento del código.</p>
+                        </h2>
+                    </div>
+                </div>  
+            </div>           
+        </div>
+
+
+        <div class="presentation_container">
+            <div class="round_corner">
+                <div class="header_main">
+                    <div class="title_main">
+                        <h2>Pokédex App<br>
+                            Integración de API para Aplicaciones Interactivas<br><br>
+                            <p class="p_login">Aplicación diseñada para integrar una API externa, permitiendo a los usuarios acceder y explorar datos dinámicos de forma eficiente. Este proyecto demuestra cómo estructurar y presentar información desde una API en un entorno interactivo y amigable para el usuario.
+                            </p>
+                        </h2>
+                    </div>
+                </div> 
+
+                <div class="header_image_one">
+                    <div class="scroll_wrapper"> <!-- Nueva caja contenedora -->
+                        <div class="media_scrollerG">
+                            <img src="images/login_image/pomex1.png" alt="Imagen login">
+                            <img src="images/login_image/pomex2.png" alt="Imagen login">
+                            <img src="images/login_image/pomex3.png" alt="Imagen login">
+                            <img src="images/login_image/pomex4.png" alt="Imagen login">
                             <video id="miVideo" autoplay loop muted>
                                 <source src="videos/pokedexVideo.mp4" type="video/mp4">
                                 Tu navegador no soporta el elemento de video.
-                            </video>
+                            </video>                    
                         </div>
                     </div>
-                    <div class="description">
-                        <h2>Pokédex App</h2>
-                        <h3>Integración de API para Aplicaciones Interactivas</h3>
-                        <p>Aplicación diseñada para integrar una API externa, permitiendo a los usuarios acceder y
-                            explorar datos dinámicos de forma eficiente. Este proyecto demuestra cómo estructurar y
-                            presentar información desde una API en un entorno interactivo y amigable para el usuario.
-                        </p>
-                    </div>
                 </div>
-                <div class="project">
-                    <div class="slider">
-                        <div class="slide">
+            </div>
+        </div>
+
+        <div class="presentation_container">
+            <div class="round_corner">
+                <div class="header_image_one">
+                    <div class="scroll_wrapper"> <!-- Nueva caja contenedora -->
+                        <div class="media_scrollerGame">
+                            <img src="images/login_image/game1.png" alt="Imagen login">
+                            <img src="images/login_image/game2.png" alt="Imagen login">
+                            <img src="images/login_image/game3.png" alt="Imagen login">
                             <video id="miVideo" autoplay loop muted>
                                 <source src="videos/cloneOne.mp4" type="video/mp4">
                                 Tu navegador no soporta el elemento de video.
                             </video>
-                        </div>
-                        <div class="slide">
                             <video id="miVideo" autoplay loop muted>
                                 <source src="videos/cloneTwo.mp4" type="video/mp4">
                                 Tu navegador no soporta el elemento de video.
-                            </video>
+                            </video>                     
                         </div>
-                    </div>
-                    <div class="slider-dots">
-                        <span class="dot" onclick="currentSlide(0, 0)"></span>
-                        <span class="dot" onclick="currentSlide(1, 0)"></span>
-                    </div>
-                    <div class="description">
-                        <h2>Flappy Bird Clone en Kotlin Nativo</h2>
-                        <h3>Desarrollo de Juego 2D sin Motor Gráfico</h3>
-                        <p>Creada de manera nativa utilizando Kotlin, esta aplicación reproduce la jugabilidad del
-                            popular juego Flappy Bird, sin recurrir a motores gráficos.
-                            Esta app demuestra cómo crear una experiencia fluida y entretenida utilizando las
-                            herramientas básicas de desarrollo para Android, sin dependencia de motores de terceros.
-                        </p>
                     </div>
                 </div>
-                <div class="project">
-                    <div class="slider">
-                        <div class="slide">
-                            <img src="images/card1.png" alt="Descripción del Proyecto 3-1">
-                        </div>
-                        <div class="slide">
-                            <img src="images/card2.png" alt="Descripción del Proyecto 3-2">
-                        </div>
-                        <div class="slide">
-                            <img src="images/card3.png" alt="Descripción del Proyecto 3-2">
-                        </div>
-                        <div class="slide">
-                            <img src="images/card4.png" alt="Descripción del Proyecto 3-2">
-                        </div>
+                <div class="header_main">
+                    <div class="title_main">
+                        <h2>Videojuegos<br><br>
+                            <p class="p_login">He desarrollado varios videojuegos con <strong>mecánicas únicas</strong>, aprovechando la versatilidad de <strong>Unity Engine</strong> para crear experiencias interactivas y dinámicas. 
+                                <br>Utilicé <strong>C#</strong> como lenguaje principal para la lógica del juego y la gestión de eventos, junto con el <strong>Physics Engine</strong> de Unity para simular movimientos y colisiones de manera realista. 
+                                <br>Además, diseñé interfaces intuitivas y optimizadas para el jugador, aplicando principios de <strong>UI/UX Design</strong> para mejorar la experiencia de usuario.</p>
+                        </h2>
                     </div>
-                    <div class="slider-dots">
-                        <span class="dot" onclick="currentSlide(0, 1)"></span>
-                        <span class="dot" onclick="currentSlide(1, 1)"></span>
-                        <span class="dot" onclick="currentSlide(2, 1)"></span>
-                        <span class="dot" onclick="currentSlide(3, 1)"></span>
-                    </div>
-                    <div class="description">
-                        <h2>Proyectos en Desarrollo Web, Móvil y Videojuegos</h2>
-                        <h3>Innovación y Creatividad en Tecnología</h3>
-                        <p>Una colección de proyectos que abarca desde el diseño de sitios web funcionales hasta la
-                            creación de videojuegos 3D. Cada trabajo es una oportunidad para explorar nuevas
-                            tecnologías, desarrollar sistemas complejos y diseñar experiencias atractivas, siempre
-                            priorizando el rendimiento y la experiencia del usuario.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+                </div> 
+            </div>
+        </div>
+
+    </main>
+
     <footer>
         <section class="github">
             <h2>Explora más proyectos</h2>
@@ -118,7 +172,7 @@
         </section>
         <p>@2025 lunatcoms</p>
     </footer>
-    <script src="scripts/script.js"></script>
-</body>
 
+    <script src="scripts/scripts.js"></script>
+</body>
 </html>
