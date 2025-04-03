@@ -57,3 +57,97 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
 });
 
+// Código para mejorar la experiencia de scroll horizontal de imágenes
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Aplicar a todos los contenedores de scroll
+    const scrollWrappers = document.querySelectorAll('.scroll_wrapper');
+    
+    scrollWrappers.forEach(wrapper => {
+      // Detectar cuando el mouse está sobre el contenedor
+      wrapper.addEventListener('mouseenter', function() {
+        this.style.cursor = 'grab';
+      });
+      
+      // Variables para el scroll con arrastre
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      
+      // Mouse presionado
+      wrapper.addEventListener('mousedown', function(e) {
+        isDown = true;
+        this.style.cursor = 'grabbing';
+        startX = e.pageX - this.offsetLeft;
+        scrollLeft = this.scrollLeft;
+        e.preventDefault();
+      });
+      
+      // Mouse suelta
+      wrapper.addEventListener('mouseup', function() {
+        isDown = false;
+        this.style.cursor = 'grab';
+      });
+      
+      // Mouse sale del área
+      wrapper.addEventListener('mouseleave', function() {
+        isDown = false;
+      });
+      
+      // Mouse se mueve mientras está presionado
+      wrapper.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - this.offsetLeft;
+        const walk = (x - startX) * 2; // Velocidad de scroll * 2
+        this.scrollLeft = scrollLeft - walk;
+      });
+      
+      // Tratar de prevenir el scroll vertical cuando se hace scroll horizontal
+      wrapper.addEventListener('wheel', function(e) {
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          e.preventDefault();
+          this.scrollLeft += e.deltaX;
+        }
+      }, { passive: false });
+    });
+    
+    // Función para mostrar u ocultar indicadores de scroll
+    function updateScrollIndicators() {
+      scrollWrappers.forEach(wrapper => {
+        // Verificar si hay scroll horizontal
+        if (wrapper.scrollWidth > wrapper.clientWidth) {
+          wrapper.classList.add('has-scroll');
+        } else {
+          wrapper.classList.remove('has-scroll');
+        }
+      });
+    }
+    
+    // Actualizar indicadores al cargar y redimensionar
+    updateScrollIndicators();
+    window.addEventListener('resize', updateScrollIndicators);
+    
+    // Función para ajustar alturas de imágenes basado en el contenido
+    function adjustImageHeights() {
+      const projectSections = document.querySelectorAll('.presentation_container');
+      
+      projectSections.forEach(section => {
+        const imageContainer = section.querySelector('.header_image_one');
+        const textContainer = section.querySelector('.header_main');
+        
+        if (imageContainer && textContainer && window.innerWidth > 768) {
+          // En pantallas grandes, intentar igualar alturas
+          const textHeight = textContainer.offsetHeight;
+          if (textHeight > 400) {
+            imageContainer.style.minHeight = textHeight + 'px';
+          }
+        }
+      });
+    }
+    
+    // Ejecutar ajuste después de cargar todas las imágenes
+    window.addEventListener('load', adjustImageHeights);
+    window.addEventListener('resize', adjustImageHeights);
+  });
+
